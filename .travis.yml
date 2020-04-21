@@ -10,6 +10,12 @@ branches:
     - trying
     - master
 
+matrix:
+    allow_failures:
+        - script: cargo clippy
+
 script:
+  - cargo clippy
   - cargo test
   - cargo test --all-features
+
